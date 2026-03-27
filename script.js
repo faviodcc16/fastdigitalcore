@@ -1,28 +1,64 @@
-const demoBtn = document.getElementById("demoBtn");
-const contactForm = document.getElementById("contactForm");
+// Initialize Lucide Icons
+lucide.createIcons();
 
-if (demoBtn) {
-  demoBtn.addEventListener("click", () => {
-    const contacto = document.getElementById("contacto");
-    contacto.scrollIntoView({ behavior: "smooth" });
-  });
-}
-
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const nombre = document.getElementById("nombre").value.trim();
-    const negocio = document.getElementById("negocio").value.trim();
-    const correo = document.getElementById("correo").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
-
-    if (!nombre || !negocio || !correo || !mensaje) {
-      alert("Por favor completa todos los campos.");
-      return;
+// Navbar interaction
+window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        nav.classList.add('bg-black/80', 'backdrop-blur-md', 'py-4', 'border-b', 'border-white/10');
+        nav.classList.remove('py-6');
+    } else {
+        nav.classList.remove('bg-black/80', 'backdrop-blur-md', 'py-4', 'border-b', 'border-white/10');
+        nav.classList.add('py-6');
     }
+});
 
-    alert("Gracias por contactarte con Fast Digital Core. Pronto podrán adaptar este formulario a correo o WhatsApp.");
-    contactForm.reset();
-  });
-}
+// Mobile Menu Logic
+const menuBtn = document.getElementById('menuBtn');
+const closeBtn = document.getElementById('closeBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+});
+
+const closeMenu = () => {
+    mobileMenu.classList.add('translate-x-full');
+};
+
+closeBtn.addEventListener('click', closeMenu);
+mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+// Reveal Animations on Scroll
+const revealCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+const revealObserver = new IntersectionObserver(revealCallback, {
+    threshold: 0.1
+});
+
+document.querySelectorAll('.reveal').forEach(el => {
+    revealObserver.observe(el);
+});
+
+// Form Handling
+const contactForm = document.getElementById('contactForm');
+const successMsg = document.getElementById('successMsg');
+
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    contactForm.classList.add('opacity-50', 'pointer-events-none');
+
+    setTimeout(() => {
+        contactForm.reset();
+        contactForm.classList.add('hidden');
+        successMsg.classList.remove('hidden');
+    }, 1500);
+});
