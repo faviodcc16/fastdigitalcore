@@ -8,7 +8,7 @@
     name="description"
     content="Impulsamos negocios con automatización, inteligencia artificial, desarrollo web y soluciones digitales premium."
   />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <header class="header">
@@ -21,7 +21,13 @@
         </div>
       </a>
 
-      <nav class="menu">
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="menu" id="menu">
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
         <a href="#proceso">Proceso</a>
@@ -29,7 +35,7 @@
         <a href="#contacto">Contacto</a>
       </nav>
 
-      <a href="#contacto" class="btn btn-outline">Solicitar asesoría</a>
+      <a href="#contacto" class="btn btn-outline nav-cta">Solicitar asesoría</a>
     </div>
   </header>
 
@@ -90,38 +96,44 @@
           <span class="section-tag">Servicios</span>
           <h2>Soluciones pensadas para crecimiento real</h2>
           <p>
-            No se trata solo de “tener una página”, sino de construir una presencia digital
+            No se trata solo de tener una página, sino de construir una presencia digital
             funcional, profesional y alineada con tus objetivos.
           </p>
         </div>
 
         <div class="cards-grid">
           <article class="service-card">
+            <div class="service-icon">01</div>
             <h3>Desarrollo web premium</h3>
             <p>Diseñamos páginas modernas, elegantes y optimizadas para generar confianza y conversiones.</p>
           </article>
 
           <article class="service-card">
+            <div class="service-icon">02</div>
             <h3>Automatización</h3>
             <p>Reducimos tareas repetitivas para que tu negocio funcione con más agilidad y menos carga manual.</p>
           </article>
 
           <article class="service-card">
+            <div class="service-icon">03</div>
             <h3>Inteligencia artificial</h3>
             <p>Integramos asistentes y flujos con IA para atención, productividad y mejora operativa.</p>
           </article>
 
           <article class="service-card">
+            <div class="service-icon">04</div>
             <h3>Sistemas a medida</h3>
             <p>Desarrollamos herramientas internas adaptadas al flujo real de tu negocio.</p>
           </article>
 
           <article class="service-card">
+            <div class="service-icon">05</div>
             <h3>Transformación digital</h3>
             <p>Ordenamos procesos, presencia digital y estructura tecnológica para escalar mejor.</p>
           </article>
 
           <article class="service-card">
+            <div class="service-icon">06</div>
             <h3>Asesoría estratégica</h3>
             <p>Te ayudamos a tomar decisiones tecnológicas inteligentes, prácticas y rentables.</p>
           </article>
@@ -134,6 +146,7 @@
         <div class="section-head">
           <span class="section-tag">Proceso</span>
           <h2>Cómo trabajamos</h2>
+          <p>Un flujo claro, ordenado y enfocado en resultados reales para tu negocio.</p>
         </div>
 
         <div class="process-grid">
@@ -164,40 +177,94 @@
       </div>
     </section>
 
-    <section class="section" id="faq">
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Beneficios</span>
+          <h2>Lo que gana tu negocio</h2>
+          <p>Más que diseño: una base digital más fuerte para vender, atender y crecer mejor.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <strong>Más ventas</strong>
+            <p>Una presencia digital bien hecha transmite confianza y convierte mejor.</p>
+          </div>
+          <div class="benefit-card">
+            <strong>Menos trabajo manual</strong>
+            <p>Automatizamos procesos para ahorrar tiempo y reducir errores repetitivos.</p>
+          </div>
+          <div class="benefit-card">
+            <strong>Atención más rápida</strong>
+            <p>Con IA y procesos optimizados, tus clientes reciben mejores respuestas.</p>
+          </div>
+          <div class="benefit-card">
+            <strong>Mejor imagen de marca</strong>
+            <p>Tu negocio se ve más serio, moderno y competitivo frente al mercado.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="faq">
       <div class="container">
         <div class="section-head">
           <span class="section-tag">FAQ</span>
           <h2>Preguntas frecuentes</h2>
         </div>
 
-        <div class="cards-grid">
-          <article class="service-card">
-            <h3>¿Esto sirve para negocios pequeños?</h3>
-            <p>Sí. Muchas veces el mayor impacto se logra justamente en negocios que aún no están bien digitalizados.</p>
-          </article>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question active">¿Esto sirve para negocios pequeños?</button>
+            <div class="faq-answer open">
+              <p>Sí. Muchas veces el mayor impacto se logra justamente en negocios que aún no están bien digitalizados.</p>
+            </div>
+          </div>
 
-          <article class="service-card">
-            <h3>¿Necesito saber de tecnología?</h3>
-            <p>No. Nosotros nos encargamos de la parte técnica y te guiamos de forma clara en todo el proceso.</p>
-          </article>
+          <div class="faq-item">
+            <button class="faq-question">¿Necesito saber de tecnología?</button>
+            <div class="faq-answer">
+              <p>No. Nosotros nos encargamos de la parte técnica y te guiamos de forma clara en todo el proceso.</p>
+            </div>
+          </div>
 
-          <article class="service-card">
-            <h3>¿Cuánto tarda un proyecto?</h3>
-            <p>Depende del alcance, pero muchas soluciones pueden avanzar rápidamente y mostrar resultados en poco tiempo.</p>
-          </article>
+          <div class="faq-item">
+            <button class="faq-question">¿Cuánto tarda un proyecto?</button>
+            <div class="faq-answer">
+              <p>Depende del alcance, pero muchas soluciones pueden avanzar rápidamente y mostrar resultados en poco tiempo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">¿Puedo empezar con algo pequeño?</button>
+            <div class="faq-answer">
+              <p>Sí. Se puede comenzar con una landing, una automatización o una mejora puntual e ir escalando después.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section cta-section" id="contacto">
       <div class="container cta-box">
-        <div>
+        <div class="cta-copy">
           <span class="section-tag">Contacto</span>
           <h2>Hablemos de tu negocio</h2>
           <p>
-            Cuéntanos qué quieres mejorar y te ayudamos a convertirlo en una solución digital seria y bien estructurada.
+            Cuéntanos qué quieres mejorar y te ayudamos a convertirlo en una solución digital seria,
+            bien estructurada y lista para crecer.
           </p>
+
+          <div class="contact-points">
+            <div class="contact-point">
+              <strong>Enfoque</strong>
+              <span>Diseño, automatización e IA</span>
+            </div>
+            <div class="contact-point">
+              <strong>Objetivo</strong>
+              <span>Más orden, más ventas, más eficiencia</span>
+            </div>
+          </div>
         </div>
 
         <form class="contact-form" id="contactForm">
@@ -222,12 +289,13 @@
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
         <a href="#proceso">Proceso</a>
+        <a href="#faq">FAQ</a>
         <a href="#contacto">Contacto</a>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 
   <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
   <script>
