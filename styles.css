@@ -1,73 +1,112 @@
-:root {
-    --obsidian: #0A0A0A;
-    --emerald: #00FF41;
-    --silver: #C0C0C0;
-}
-
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--obsidian);
-    color: white;
+  margin: 0;
+  font-family: Arial;
+  background: #0b1220;
+  color: white;
 }
 
-h1, h2, h3, .font-display {
-    font-family: 'Space Grotesk', sans-serif;
+.container {
+  width: 90%;
+  margin: auto;
 }
 
-.text-emerald {
-    color: var(--emerald);
+.header {
+  background: #111;
+  padding: 15px 0;
 }
 
-.bg-emerald {
-    background-color: var(--emerald);
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.border-emerald {
-    border-color: var(--emerald);
+.logo {
+  display: flex;
+  gap: 10px;
 }
 
-.glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+.logo-mark {
+  background: #00ff88;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.glass-card:hover {
-    border-color: var(--emerald);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px -10px rgba(0, 255, 65, 0.2);
+.menu a {
+  margin: 0 10px;
+  color: #aaa;
 }
 
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+.btn {
+  border: 1px solid #555;
+  padding: 8px 15px;
+  border-radius: 20px;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+.hero {
+  padding: 80px 0;
 }
 
-.hero-gradient {
-    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.08) 0%, transparent 50%);
+.hero-grid {
+  display: flex;
+  justify-content: space-between;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
+.hero-actions {
+  margin-top: 20px;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--obsidian);
+.btn-primary {
+  background: #00ff88;
+  color: black;
+  padding: 10px 20px;
+  border: none;
 }
 
-::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 10px;
+.btn-secondary {
+  border: 1px solid #555;
+  padding: 10px 20px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: var(--emerald);
+.section {
+  padding: 60px 0;
+}
+
+.dark {
+  background: #111;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+}
+
+.box {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
 }
