@@ -1,241 +1,173 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAST DIGITAL CORE | Arquitectura de IA y Automatización</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Digital Core</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="overflow-x-hidden">
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6 px-6 md:px-12 flex justify-between items-center">
-        <div class="text-2xl font-bold tracking-tighter font-display">
-            FAST<span class="text-emerald">DIGITAL</span>CORE
-        </div>
-        
-        <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide uppercase">
-            <a href="#inicio" class="hover:text-emerald transition">Inicio</a>
-            <a href="#servicios" class="hover:text-emerald transition">Servicios</a>
-            <a href="#proceso" class="hover:text-emerald transition">Proceso</a>
-            <a href="#contacto" class="hover:text-emerald transition">Contacto</a>
-        </div>
+<body>
 
-        <a href="#contacto" class="hidden md:block bg-white text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-emerald transition-colors">
-            AGENDAR DIAGNÓSTICO
-        </a>
+<header class="header">
+  <div class="container nav">
 
-        <!-- Mobile Toggle -->
-        <button class="md:hidden text-white" id="menuBtn">
-            <i data-lucide="menu"></i>
-        </button>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-display transform translate-x-full transition-transform duration-300">
-        <button class="absolute top-8 right-8" id="closeBtn"><i data-lucide="x"></i></button>
-        <a href="#inicio" class="mobile-link">Inicio</a>
-        <a href="#servicios" class="mobile-link">Servicios</a>
-        <a href="#proceso" class="mobile-link">Proceso</a>
-        <a href="#contacto" class="mobile-link">Contacto</a>
+    <div class="logo">
+      <div class="logo-mark">FDC</div>
+      <div>
+        <strong>Fast Digital Core</strong>
+        <span class="sub">IA & Automatización</span>
+      </div>
     </div>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 hero-gradient">
-        <div class="container mx-auto px-6 text-center z-10">
-            <div class="inline-block border border-emerald/30 bg-emerald/10 text-emerald px-4 py-1 rounded-full text-xs font-bold tracking-widest mb-6 reveal">
-                TECNOLOGÍA DE PRÓXIMA GENERACIÓN
-            </div>
-            <h1 class="text-5xl md:text-8xl font-bold leading-tight mb-8 font-display reveal" style="transition-delay: 200ms;">
-                El núcleo inteligente <br> <span class="text-emerald">para dominar el mercado.</span>
-            </h1>
-            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 reveal" style="transition-delay: 400ms;">
-                Integramos IA y automatización avanzada para transformar procesos lentos en operaciones de alta velocidad. Menos fricción, más escalabilidad.
-            </p>
-            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6 reveal" style="transition-delay: 600ms;">
-                <a href="#contacto" class="w-full md:w-auto bg-emerald text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform flex items-center justify-center">
-                    COMENZAR AHORA <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
-                </a>
-                <a href="#servicios" class="w-full md:w-auto border border-white/20 px-10 py-4 rounded-full font-bold hover:bg-white/5 transition">
-                    VER SERVICIOS
-                </a>
-            </div>
-        </div>
-        
-        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent"></div>
-    </section>
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#beneficios">Resultados</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
 
-    <!-- Services Section -->
-    <section id="servicios" class="py-24 bg-black">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
-                <div class="max-w-xl">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4 font-display">Soluciones de <span class="text-emerald">Alto Rendimiento</span></h2>
-                    <p class="text-gray-400">Diseñamos la infraestructura técnica que permite a tu empresa crecer sin límites operativos.</p>
-                </div>
-                <div class="hidden md:block text-emerald font-bold tracking-widest text-sm uppercase">
-                    [ Expertise / 2026 ]
-                </div>
-            </div>
+    <a href="#contacto" class="btn">Asesoría</a>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-3xl reveal">
-                    <div class="w-14 h-14 bg-emerald/10 rounded-2xl flex items-center justify-center text-emerald mb-6">
-                        <i data-lucide="cpu" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Arquitectura de IA</h3>
-                    <p class="text-gray-400 mb-6">Inyectamos inteligencia en tu toma de decisiones mediante modelos predictivos y agentes autónomos.</p>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-emerald mr-2"></i> Modelos LLM Personalizados</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-emerald mr-2"></i> Análisis Predictivo</li>
-                    </ul>
-                </div>
+  </div>
+</header>
 
-                <div class="glass-card p-8 rounded-3xl reveal" style="transition-delay: 200ms;">
-                    <div class="w-14 h-14 bg-emerald/10 rounded-2xl flex items-center justify-center text-emerald mb-6">
-                        <i data-lucide="zap" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Automatización Core</h3>
-                    <p class="text-gray-400 mb-6">Eliminamos tareas repetitivas sincronizando todo tu ecosistema digital para liberar tiempo humano.</p>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-emerald mr-2"></i> Workflows entre CRMs</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-emerald mr-2"></i> Onboarding Automatizado</li>
-                    </ul>
-                </div>
+<main>
 
-                <div class="glass-card p-8 rounded-3xl reveal" style="transition-delay: 400ms;">
-                    <div class="w-14 h-14 bg-emerald/10 rounded-2xl flex items-center justify-center text-emerald mb-6">
-                        <i data-lucide="layout" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Web de Conversión</h3>
-                    <p class="text-gray-400 mb-6">Desarrollamos interfaces de alta gama diseñadas psicológicamente para convertir visitas en ingresos.</p>
-                    <ul class="text-sm text-gray-300 space-y-2">
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-emerald mr-2"></i> Carga Ultrarrápida</li>
-                        <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-emerald mr-2"></i> UX/UI de Nivel Startup</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="inicio" class="hero">
+  <div class="container hero-grid">
 
-    <!-- Proceso -->
-    <section id="proceso" class="py-24 bg-zinc-950">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-4xl font-bold mb-4 font-display text-emerald italic uppercase tracking-tighter">Fast Track Method</h2>
-                <p class="text-gray-400 max-w-xl mx-auto">De la auditoría a la ejecución en tiempo récord.</p>
-            </div>
+    <div>
+      <h1>Convierte tu negocio en una máquina digital que vende todos los días</h1>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
-                <div class="hidden md:block absolute top-10 left-0 w-full h-[1px] bg-white/10 z-0"></div>
-                
-                <div class="relative z-10 text-center reveal">
-                    <div class="w-20 h-20 bg-black border border-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold font-display">01</div>
-                    <h4 class="font-bold mb-2">Audit</h4>
-                    <p class="text-gray-500 text-sm">Analizamos cuellos de botella y pérdidas de eficiencia.</p>
-                </div>
+      <p>
+        Creamos sistemas, páginas web y automatizaciones con inteligencia artificial 
+        para que vendas más, trabajes menos y escales tu negocio.
+      </p>
 
-                <div class="relative z-10 text-center reveal" style="transition-delay: 100ms;">
-                    <div class="w-20 h-20 bg-black border border-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold font-display">02</div>
-                    <h4 class="font-bold mb-2">Architect</h4>
-                    <p class="text-gray-500 text-sm">Diseñamos tu núcleo digital personalizado.</p>
-                </div>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-primary">Quiero más ventas</a>
+        <a href="#servicios" class="btn-secondary">Ver servicios</a>
+      </div>
+    </div>
 
-                <div class="relative z-10 text-center reveal" style="transition-delay: 200ms;">
-                    <div class="w-20 h-20 bg-black border border-emerald/50 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold font-display text-emerald">03</div>
-                    <h4 class="font-bold mb-2">Deploy</h4>
-                    <p class="text-gray-500 text-sm">Implementación ágil con soporte continuo.</p>
-                </div>
+    <div class="card">
+      <h3>Lo que hacemos</h3>
+      <ul>
+        <li>IA para negocios</li>
+        <li>Automatización</li>
+        <li>Páginas web</li>
+        <li>Sistemas digitales</li>
+      </ul>
+    </div>
 
-                <div class="relative z-10 text-center reveal" style="transition-delay: 300ms;">
-                    <div class="w-20 h-20 bg-black border border-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold font-display text-emerald">04</div>
-                    <h4 class="font-bold mb-2 text-emerald">Optimize</h4>
-                    <p class="text-gray-500 text-sm">Escalamos resultados basados en datos reales.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  </div>
+</section>
 
-    <!-- CTA / Contact -->
-    <section id="contacto" class="py-24 bg-black border-t border-white/5">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <h2 class="text-5xl font-bold mb-6 font-display">¿Listo para el <span class="text-emerald">siguiente nivel?</span></h2>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                        No digitalizamos negocios; inyectamos inteligencia en su ADN. Cuéntanos tu desafío y te mostraremos cómo la tecnología puede resolverlo.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-emerald/10 rounded-full flex items-center justify-center text-emerald"><i data-lucide="mail"></i></div>
-                            <div>
-                                <p class="text-sm text-gray-500">Email Directo</p>
-                                <p class="font-bold">contacto@fastdigitalcore.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-emerald/10 rounded-full flex items-center justify-center text-emerald"><i data-lucide="map-pin"></i></div>
-                            <div>
-                                <p class="text-sm text-gray-500">Sede Global</p>
-                                <p class="font-bold">Digital Nomads / Remote First</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<section id="servicios" class="section">
+  <div class="container">
+    <h2>Servicios</h2>
 
-                <div class="glass-card p-8 rounded-3xl reveal" style="transition-delay: 200ms;">
-                    <form id="contactForm" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Nombre</label>
-                                <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-emerald transition" placeholder="Juan Pérez">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Empresa</label>
-                                <input type="text" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-emerald transition" placeholder="Tech Solutions S.A.">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Email Corporativo</label>
-                            <input type="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-emerald transition" placeholder="juan@empresa.com">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Mensaje / Desafío</label>
-                            <textarea rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 outline-none focus:border-emerald transition" placeholder="Cuéntanos qué proceso quieres mejorar..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-emerald text-black py-4 rounded-xl font-bold hover:brightness-110 transition flex items-center justify-center">
-                            ENVIAR MENSAJE <i data-lucide="send" class="ml-2 w-5 h-5"></i>
-                        </button>
-                    </form>
-                    <div id="successMsg" class="hidden mt-6 p-4 bg-emerald/20 text-emerald rounded-xl text-center font-bold">
-                        ¡Mensaje enviado con éxito! Nos pondremos en contacto en menos de 24h.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="grid">
+      <div class="box">
+        <h3>IA</h3>
+        <p>Automatiza procesos y mejora decisiones.</p>
+      </div>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-white/5 bg-black">
-        <div class="container mx-auto px-6 text-center">
-            <div class="text-xl font-bold font-display mb-8">
-                FAST<span class="text-emerald">DIGITAL</span>CORE
-            </div>
-            <div class="flex justify-center space-x-6 mb-8 text-gray-500">
-                <a href="#" class="hover:text-emerald transition"><i data-lucide="linkedin"></i></a>
-                <a href="#" class="hover:text-emerald transition"><i data-lucide="twitter"></i></a>
-                <a href="#" class="hover:text-emerald transition"><i data-lucide="instagram"></i></a>
-            </div>
-            <p class="text-gray-600 text-sm">
-                &copy; 2026 Fast Digital Core. Todos los derechos reservados. <br>
-                Construyendo el futuro de la inteligencia empresarial.
-            </p>
-        </div>
-    </footer>
+      <div class="box">
+        <h3>Web</h3>
+        <p>Páginas modernas que convierten.</p>
+      </div>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js"></script>
+      <div class="box">
+        <h3>Automatización</h3>
+        <p>Reduce tareas repetitivas.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="beneficios" class="section dark">
+  <div class="container">
+    <h2>Resultados</h2>
+
+    <div class="grid">
+      <div class="box"><h3>Más ventas</h3></div>
+      <div class="box"><h3>Menos trabajo</h3></div>
+      <div class="box"><h3>24/7 automático</h3></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="container">
+    <h2>Preguntas</h2>
+
+    <div class="grid">
+      <div class="box">
+        <h3>¿Funciona?</h3>
+        <p>Sí, especialmente en negocios pequeños.</p>
+      </div>
+
+      <div class="box">
+        <h3>¿Es difícil?</h3>
+        <p>No, nosotros hacemos todo.</p>
+      </div>
+
+      <div class="box">
+        <h3>¿Cuánto demora?</h3>
+        <p>Días, no meses.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contacto" class="section dark">
+  <div class="container">
+    <h2>Contáctanos</h2>
+
+    <form id="form">
+      <input type="text" id="nombre" placeholder="Nombre" required>
+      <input type="text" id="negocio" placeholder="Negocio" required>
+      <input type="email" id="correo" placeholder="Correo" required>
+      <textarea id="mensaje" placeholder="Mensaje"></textarea>
+      <button class="btn-primary">Enviar</button>
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>Fast Digital Core © 2026</p>
+</footer>
+
+
+<script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
+<script>
+  new CozeWebSDK.WebChatClient({
+    config: {
+      bot_id: '7622028378845249589',
+    },
+    componentProps: {
+      title: 'Fast Digital Core | Asistente IA',
+    },
+    auth: {
+      type: 'token',
+      token: 'pat_ZQotPaOU5xRok99YdOTfEYC2fDUVF0qyRWObOu9KnD1v7RalmdyBvq0ZudjGsTGR',
+      onRefreshToken: function () {
+        return 'pat_ZQotPaOU5xRok99YdOTfEYC2fDUVF0qyRWObOu9KnD1v7RalmdyBvq0ZudjGsTGR'
+      }
+    }
+  });
+</script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
