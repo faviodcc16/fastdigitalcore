@@ -28,7 +28,7 @@ if (contactForm) {
       return;
     }
 
-    alert("Gracias por contactarte con Fast Digital Core. Pronto podremos conectar este formulario con correo o WhatsApp.");
+    alert("Gracias por contactarte con Fast Digital Core.");
     contactForm.reset();
   });
 }
