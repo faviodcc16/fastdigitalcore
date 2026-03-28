@@ -122,6 +122,20 @@ button {
   color: var(--emerald) !important;
 }
 
+#navbar {
+  background: transparent;
+}
+
+input,
+textarea {
+  color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
 @media (max-width: 768px) {
   .app-section {
     padding-top: 100px;
