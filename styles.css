@@ -1,112 +1,130 @@
+:root {
+  --obsidian: #0A0A0A;
+  --emerald: #00FF41;
+  --silver: #C0C0C0;
+}
+
+html,
 body {
-  margin: 0;
-  font-family: Arial;
-  background: #0b1220;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--obsidian);
   color: white;
 }
 
-.container {
-  width: 90%;
-  margin: auto;
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-.header {
-  background: #111;
-  padding: 15px 0;
+.text-emerald {
+  color: var(--emerald);
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.bg-emerald {
+  background-color: var(--emerald);
 }
 
-.logo {
-  display: flex;
-  gap: 10px;
+.border-emerald {
+  border-color: var(--emerald);
 }
 
-.logo-mark {
-  background: #00ff88;
-  color: black;
-  padding: 10px;
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--emerald);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(0, 255, 65, 0.2);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.08) 0%, transparent 50%);
+}
+
+.app-section {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(40px);
+  transition: opacity 0.45s ease, transform 0.45s ease, visibility 0.45s ease;
+  overflow-y: auto;
+  padding-top: 110px;
+  padding-bottom: 90px;
+}
+
+.active-section {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.app-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.app-section::-webkit-scrollbar-track {
+  background: var(--obsidian);
+}
+
+.app-section::-webkit-scrollbar-thumb {
+  background: #333;
   border-radius: 10px;
 }
 
-.menu a {
-  margin: 0 10px;
-  color: #aaa;
+.app-section::-webkit-scrollbar-thumb:hover {
+  background: var(--emerald);
 }
 
-.btn {
-  border: 1px solid #555;
-  padding: 8px 15px;
-  border-radius: 20px;
+button {
+  outline: none;
 }
 
-.hero {
-  padding: 80px 0;
+.mobile-link {
+  color: white;
+  transition: color 0.3s ease;
 }
 
-.hero-grid {
-  display: flex;
-  justify-content: space-between;
+.mobile-link:hover {
+  color: var(--emerald);
 }
 
-.hero-actions {
-  margin-top: 20px;
+.nav-link-active {
+  color: var(--emerald) !important;
 }
 
-.btn-primary {
-  background: #00ff88;
-  color: black;
-  padding: 10px 20px;
-  border: none;
-}
-
-.btn-secondary {
-  border: 1px solid #555;
-  padding: 10px 20px;
-}
-
-.section {
-  padding: 60px 0;
-}
-
-.dark {
-  background: #111;
-}
-
-.grid {
-  display: flex;
-  gap: 20px;
-}
-
-.box {
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.card {
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input, textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-}
-
-.footer {
-  text-align: center;
-  padding: 20px;
+@media (max-width: 768px) {
+  .app-section {
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
 }
