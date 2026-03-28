@@ -142,3 +142,24 @@ textarea::placeholder {
     padding-bottom: 30px;
   }
 }
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+[data-relevanceai-share-id] {
+  position: relative !important;
+  z-index: 999999 !important;
+}
+
+iframe[src*="relevanceai"],
+div[id*="relevance"],
+div[class*="relevance"] {
+  z-index: 999999 !important;
+}
+
+footer {
+  z-index: 20 !important;
+}
