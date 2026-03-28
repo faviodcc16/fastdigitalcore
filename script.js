@@ -1,64 +1,89 @@
-const demoBtn = document.getElementById("demoBtn");
+// Inicializar iconos
+lucide.createIcons();
+
+// Elementos base
+const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll(".app-section");
 const contactForm = document.getElementById("contactForm");
-const menuToggle = document.getElementById("menuToggle");
-const menu = document.getElementById("menu");
-const menuLinks = document.querySelectorAll(".menu a");
-const faqQuestions = document.querySelectorAll(".faq-question");
+const successMsg = document.getElementById("successMsg");
 
-if (demoBtn) {
-  demoBtn.addEventListener("click", () => {
-    const contacto = document.getElementById("contacto");
-    if (contacto) {
-      contacto.scrollIntoView({ behavior: "smooth" });
+// Menú móvil
+if (menuBtn && mobileMenu) {
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("translate-x-full");
+  });
+}
+
+function closeMenu() {
+  if (mobileMenu) {
+    mobileMenu.classList.add("translate-x-full");
+  }
+}
+
+if (closeBtn) {
+  closeBtn.addEventListener("click", closeMenu);
+}
+
+// Navegación entre "páginas" dentro del mismo index
+function activateRevealInSection(section) {
+  const revealElements = section.querySelectorAll(".reveal");
+
+  revealElements.forEach((el, index) => {
+    el.classList.remove("active");
+    setTimeout(() => {
+      el.classList.add("active");
+    }, 80 * index);
+  });
+}
+
+function showSection(targetId) {
+  sections.forEach(section => {
+    section.classList.remove("active-section");
+  });
+
+  const targetSection = document.getElementById(targetId);
+  if (targetSection) {
+    targetSection.classList.add("active-section");
+    targetSection.scrollTop = 0;
+    activateRevealInSection(targetSection);
+  }
+
+  navLinks.forEach(link => {
+    link.classList.remove("nav-link-active");
+    if (link.dataset.target === targetId) {
+      link.classList.add("nav-link-active");
     }
   });
+
+  closeMenu();
 }
 
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const nombre = document.getElementById("nombre").value.trim();
-    const negocio = document.getElementById("negocio").value.trim();
-    const correo = document.getElementById("correo").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
-
-    if (!nombre || !negocio || !correo || !mensaje) {
-      alert("Por favor completa todos los campos.");
-      return;
-    }
-
-    alert("Gracias por contactarte con Fast Digital Core.");
-    contactForm.reset();
-  });
-}
-
-if (menuToggle && menu) {
-  menuToggle.addEventListener("click", () => {
-    menu.classList.toggle("open");
-  });
-
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      menu.classList.remove("open");
-    });
-  });
-}
-
-faqQuestions.forEach((question) => {
-  question.addEventListener("click", () => {
-    const isActive = question.classList.contains("active");
-
-    faqQuestions.forEach((item) => {
-      item.classList.remove("active");
-      const answer = item.nextElementSibling;
-      if (answer) answer.classList.remove("open");
-    });
-
-    if (!isActive) {
-      question.classList.add("active");
-      const answer = question.nextElementSibling;
-      if (answer) answer.classList.add("open");
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    const target = link.dataset.target;
+    if (target) {
+      showSection(target);
     }
   });
 });
+
+// Activar sección inicial
+showSection("inicio");
+
+// Formulario
+if (contactForm && successMsg) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    contactForm.classList.add("opacity-50", "pointer-events-none");
+
+    setTimeout(() => {
+      contactForm.reset();
+      contactForm.classList.add("hidden");
+      successMsg.classList.remove("hidden");
+    }, 1200);
+  });
+}
