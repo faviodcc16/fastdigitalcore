@@ -1,16 +1,12 @@
-// Inicializar iconos
 lucide.createIcons();
 
-// Elementos base
 const menuBtn = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll(".app-section");
 const contactForm = document.getElementById("contactForm");
-const successMsg = document.getElementById("successMsg");
 
-// Menú móvil
 if (menuBtn && mobileMenu) {
   menuBtn.addEventListener("click", () => {
     mobileMenu.classList.remove("translate-x-full");
@@ -27,12 +23,12 @@ if (closeBtn) {
   closeBtn.addEventListener("click", closeMenu);
 }
 
-// Navegación entre "páginas" dentro del mismo index
 function activateRevealInSection(section) {
   const revealElements = section.querySelectorAll(".reveal");
 
   revealElements.forEach((el, index) => {
     el.classList.remove("active");
+
     setTimeout(() => {
       el.classList.add("active");
     }, 80 * index);
@@ -40,19 +36,21 @@ function activateRevealInSection(section) {
 }
 
 function showSection(targetId) {
-  sections.forEach(section => {
+  sections.forEach((section) => {
     section.classList.remove("active-section");
   });
 
   const targetSection = document.getElementById(targetId);
+
   if (targetSection) {
     targetSection.classList.add("active-section");
     targetSection.scrollTop = 0;
     activateRevealInSection(targetSection);
   }
 
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
     link.classList.remove("nav-link-active");
+
     if (link.dataset.target === targetId) {
       link.classList.add("nav-link-active");
     }
@@ -61,29 +59,32 @@ function showSection(targetId) {
   closeMenu();
 }
 
-navLinks.forEach(link => {
+navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     const target = link.dataset.target;
+
     if (target) {
       showSection(target);
     }
   });
 });
 
-// Activar sección inicial
 showSection("inicio");
 
-// Formulario
-if (contactForm && successMsg) {
+if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    contactForm.classList.add("opacity-50", "pointer-events-none");
+    const nombre = document.getElementById("nombre").value.trim();
+    const empresa = document.getElementById("empresa").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensaje = document.getElementById("mensaje").value.trim();
 
-    setTimeout(() => {
-      contactForm.reset();
-      contactForm.classList.add("hidden");
-      successMsg.classList.remove("hidden");
-    }, 1200);
+    const subject = encodeURIComponent("Consulta desde Fast Digital Core");
+    const body = encodeURIComponent(
+      `Nombre: ${nombre}\nEmpresa: ${empresa}\nEmail: ${email}\n\nMensaje:\n${mensaje}`
+    );
+
+    window.location.href = `mailto:contacto@fastdigitalcore.com?subject=${subject}&body=${body}`;
   });
 }
